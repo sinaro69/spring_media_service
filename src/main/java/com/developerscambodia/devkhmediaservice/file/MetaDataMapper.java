@@ -7,6 +7,5 @@ import org.mapstruct.Mapper;
 public interface MetaDataMapper {
 
 
-    MetaDataDto toMetaData(FileMetaData fileMetaData);
     FileMetaData toFileMetaData(MetaDataDto metaDataDto);
 }

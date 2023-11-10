@@ -1,3 +1,4 @@
+
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
@@ -7,7 +8,7 @@ spring:
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
-      ddl-auto: update
+      ddl-auto: create-drop
     show-sql: true
     properties:
       hibernate:
@@ -23,3 +24,5 @@ minio:
   accessKey: ${MINIO_ACCESS_KEY}
   secretKey: ${MINIO_SECRET_KEY}
 
+server:
+  port: ${SERVER_PORT}
