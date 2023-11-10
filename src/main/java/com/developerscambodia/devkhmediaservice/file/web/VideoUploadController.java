@@ -2,6 +2,7 @@ package com.developerscambodia.devkhmediaservice.file.web;
 
 
 import com.developerscambodia.devkhmediaservice.file.FileService;
+import jakarta.servlet.annotation.HttpConstraint;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -23,6 +24,7 @@ public class VideoUploadController {
     private final FileService fileService;
 
     @PostMapping
+    @ResponseStatus(HttpStatus.CREATED )
     public Mono<ResponseEntity<String>> uploadFile(@RequestParam("file") MultipartFile file, MetaDataDto metaDataDto) throws IOException {
 
         if (!file.isEmpty()) {
@@ -52,9 +54,6 @@ public class VideoUploadController {
                         }
                 );
     }
-
-
-
 
 
     @DeleteMapping("disable/{uuid}")

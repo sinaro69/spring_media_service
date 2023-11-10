@@ -21,10 +21,6 @@ public interface FileService {
     Flux<ObjectWriteResponse> uploadMultipleFiles(Flux<MultipartFile> files, String bucketName) throws IOException;
 
 
-//    String uploadImage(MultipartFile file) throws IOException;
-
-//    MetaDataDto findByUuid(String uuid);
-
 
     void disableFile(String uuid);
     @Transactional
